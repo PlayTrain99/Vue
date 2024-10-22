@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Vue.js</title>
+    
+</head>
+<body>
+
+    <div id="app">
+        <p>licznik: {{ counter }}</p>
+        <button @click = "increaseCounter">+1</button>
+        <button @click = "downCounter">-1</button>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    counter: 0
+                }
+            },
+            methods: {
+                increaseCounter(){
+                    this.counter++
+                },
+                downCounter(){
+                    if(this.counter >0){
+                        this.counter--
+                    }
+                    
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+    
+</body>
+</html>
